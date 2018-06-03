@@ -1,0 +1,32 @@
+
+class ActionsRelatedToHomePage {
+
+    public void DisplayBalance(){
+        
+        var dataService = ServiceLocator.Inject<DataService>();
+        var balance  = dataService.GetBalance();
+
+        // display balance
+    }
+}
+
+class ActionsRelatedToTransactionsPage {
+
+    public void TransferFunds(User from, User to, double amount){
+
+        var dataService = ServiceLocator.Inject<DataService>();
+        var balance  = dataService.GetBalance();
+
+            if (balance > 0)
+                // do transaction
+    }
+}
+
+public class DataService(){
+    
+    static sql = OpenSQLConnection("sql-connection-string");
+
+    public GetBalance(){
+        balance = sql.Query("SQL-get-balance-query");
+    }
+}
